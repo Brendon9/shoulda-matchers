@@ -12,6 +12,10 @@ is now:
 * Drop support for Rails 4.0 and 4.1 as well as Ruby 2.0 and 2.1, since they've
   been end-of-lifed. The gem now supports Ruby 2.2+ and Rails 4.2+.
 
+* `use_before_filter`, `use_after_filter`, and `use_around_filter` are no longer
+  usable when using shoulda-matchers under Rails 5.x, as the corresponding
+  controller callback don't exist there.
+
 ### Bug fixes
 
 * Fix association matchers when used under Rails 5.x so that they make use of

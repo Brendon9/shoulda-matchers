@@ -1,7 +1,7 @@
 module Shoulda
   module Matchers
     # @private
-    class RailsShim
+    module RailsShim
       class << self
         def action_pack_gte_4_1?
           Gem::Requirement.new('>= 4.1').satisfied_by?(action_pack_version)
@@ -9,6 +9,10 @@ module Shoulda
 
         def action_pack_gte_5?
           Gem::Requirement.new('>= 5').satisfied_by?(action_pack_version)
+        end
+
+        def action_pack_lt_5?
+          Gem::Requirement.new('< 5').satisfied_by?(action_pack_version)
         end
 
         def action_pack_version
